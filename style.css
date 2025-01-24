@@ -1,7 +1,8 @@
 :root{
     font-family: "Roboto", serif;
-    background-color: ;
-    color: azure;
+    --background-color: #d4efdf;
+    --forefround-color:  #f6ddcc;
+    color: black;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -10,29 +11,35 @@
 /* body */
 body{
     display: grid;
-    grid-template-columns: 30fr 40fr 30fr;
-    grid-template-rows: 10fr 90fr;
+    grid-template-columns: 40fr 60fr;
+    grid-template-rows: 10fr 45fr 45fr;
     grid-template-areas: 
-    "header header header"
-    "sidebar main current"
+    "header header"
+    "sidebar main"
+    'current main'
     ;
-    gap: 1rem;
+    gap: 2rem;
+    background-color: var(--background-color);
+    margin: 1rem;
 }
 
 /* header */
+header{
+    grid-area: header;
+}
+
 
 .hamburger-menu{
     display:flex;
     justify-content: space-between;
     align-items: center;
     font-family:  "Protest Guerrilla", serif;
-    color: gainsboro;
     padding: 1rem;
-    background-color: rgb(0, 0, 0);
+    background-color: var(--forefround-color);
     border-radius: .7rem;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    grid-area: header;
 }
+   
 
 .hamburger-menu > h1{
     cursor: pointer;
@@ -49,12 +56,11 @@ body{
 .sidebar{
     display: flex;
     flex-direction: column;
-    justify-content: center;
     /* width: 20vw; */
     /* height: 100vh; */
     padding: 2rem;
     /* margin: .5rem; */
-    background-color: rgb(0, 0, 0);
+    background-color: var(--forefround-color);
     border-radius: .5rem;
     grid-area: sidebar;
 }
@@ -70,7 +76,17 @@ body{
     /* width: 20vw; */
     border-radius: .5rem;
     border: none;
-    background-color: gainsboro;
+    background-color:white;
+    box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+}
+
+.sidebar > form > select{
+    padding: 1rem;
+    margin: 1rem;
+    /* width: 20vw; */
+    border-radius: .5rem;
+    border: none;
+    background-color:white;
     box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
 }
 
@@ -78,13 +94,15 @@ body{
     padding: .5rem;
     margin: 1rem;
     /* width: 20vw; */
-    color: gainsboro;
-    background-color: rgb(31, 3, 3);
+    color: white;
+    background-color: black;
     border: none;
     border-radius: 3rem;
     font-weight: 600;
     box-shadow: rgba(147, 143, 143, 0.18) 0px 2px 4px;
 }
+
+
 
 .book-count > h3{
     display: flex;
@@ -106,14 +124,17 @@ body{
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem; 
     padding: 1rem;
-    background-color: black;
+    background-color: var(--forefround-color);
     grid-area: main;
+    border-radius: .5rem;
+    justify-content: center;
+    align-items: center;
 }
 
 .book-tile{
-    background-color: gainsboro;
-    height: 15rem;
-    width: 10rem;
+    background-color: var(--background-color);
+    height: 20rem;
+    width: 15rem;
     border-radius: .7rem; 
 }
 
@@ -122,19 +143,30 @@ body{
     height: 5rem;
 }
 
+.des-books{
+    line-height: .3rem;
+    font-size: .8rem;
+    padding-left: 1.5rem;
+}
+
 /* currently reading */
 .currently-reading{
     padding: 1rem;
-    background-color: black;
+    background-color: var(--forefround-color);
+    grid-area: current;
+    border-radius: .5rem;
+}
+
+.reading-tile{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    grid-area: current;
+    justify-content: space-between;
+
 }
 
-.currently-reading > img{
+.reading-tile > img{
     padding: 2.5rem;
-    height: 5rem;
-    background-color: gainsboro;
+    height: 10rem;
+    background-color: var(--background-color);
 }

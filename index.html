@@ -19,11 +19,16 @@
     </header>
 
     <div class="sidebar">
-        <form action="submit" class="add-book">
-            <input type="text" placeholder="Book Title">
-            <input type="text" placeholder="Author">
-            <input type="text" placeholder="Genre">
-            <button>Add Book</button>
+        <form id="add-book" name="add-book">
+            <input type="text" placeholder="Book Title" id="book-title" name="title">
+            <input type="text" placeholder="Author" id="author" name="author">
+            <input type="text" placeholder="Genre" name="genre" id="genre">
+            <select id="status" name="status">
+                <option value="Read">Read</option>
+                <option value="DNF">Did Not Finish</option>
+                <option value="Reading">Reading</option>
+            </select>
+            <button id="add-book-btn">Add Book</button>
         </form>
 
        <div class="book-count">
@@ -31,42 +36,19 @@
        </div>        
     </div>
 
-    <main class="main">
-        <div class="book-tile">
-            <img src="assets/book.svg" alt="books">
+    <div class="currently-reading">
+        <div class="reading-tile">
+            <h2>Currently Reading</h2>
+            <img src="assets/book.svg" alt="">
+            <h3>Title:</h3>
+            <h3>Author</h3>
         </div>
-        <div class="book-tile">
-            <img src="assets/book.svg" alt="books">
-        </div>
-        <div class="book-tile">
-            <img src="assets/book.svg" alt="books">
-        </div>
-        <div class="book-tile">
-            <img src="assets/book.svg" alt="books">
-        </div>
-        <div class="book-tile">
-            <img src="assets/book.svg" alt="books">
-        </div>
-        <div class="book-tile">
-            <img src="assets/book.svg" alt="books">
-        </div>
-        <div class="book-tile">
-            <img src="assets/book.svg" alt="books">
-        </div>
-        <div class="book-tile">
-            <img src="assets/book.svg" alt="books">
-        </div>
-        <div class="book-tile">
-            <img src="assets/book.svg" alt="books">
-        </div>
+    </div>
+
+    <main class="main" id="book-container">
     </main>
 
-    <div class="currently-reading">
-        <h2>Currently Reading</h2>
-        <img src="assets/book.svg" alt="">
-        <h3>Title:</h3>
-        <h3>Author</h3>
-    </div>
+
     
 
     <script src="script.js"></script>
