@@ -127,26 +127,39 @@ header{
     background-color: var(--forefround-color);
     grid-area: main;
     border-radius: .5rem;
-    justify-content: center;
-    align-items: center;
 }
 
 .book-tile{
+    display: flex;
+    flex-direction: column;
     background-color: var(--background-color);
     height: 20rem;
     width: 15rem;
     border-radius: .7rem; 
+    justify-content: space-evenly;
 }
 
 .book-tile > img{
     padding: 2.5rem;
-    height: 5rem;
+    height: 3rem;
 }
 
 .des-books{
-    line-height: .3rem;
+    display: flex;
+    flex-direction: column;
+    line-height: .1rem;
     font-size: .8rem;
-    padding-left: 1.5rem;
+    font-weight: 500;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.action-btns{
+    display: flex;
+    padding: 2rem;
+    padding-top: .3rem;
+    justify-content: space-between;
 }
 
 /* currently reading */
@@ -170,3 +183,66 @@ header{
     height: 10rem;
     background-color: var(--background-color);
 }
+
+/* edit pop up form */
+.popup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color:var(--forefround-color);
+  padding: 20px;
+  border: 1px solid #ddd;
+  z-index: 1000;
+  width: 300px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.popup h2 {
+  margin-top: 0;
+  font-weight: 600;
+}
+
+.popup form {
+  display: flex;
+  flex-direction: column;
+}
+
+.popup label {
+  margin-bottom: 10px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.popup input, .popup select {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: white;
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+}
+
+.popup button {
+  padding: 0.5rem;
+  margin: 1rem;
+  color: white;
+  background-color: black;
+  border: none;
+  border-radius: 3rem;
+  font-weight: 600;
+  box-shadow: rgba(147, 143, 143, 0.18) 0px 2px 4px;
+}
+
+.current-read-btn {
+    padding: 0.5rem;
+    margin-left: 1.5rem;
+    margin-right: 1rem;
+    width: 12rem;
+    color: white;
+    background-color: black;
+    border: none;
+    border-radius: 3rem;
+    font-weight: 600;
+    box-shadow: rgba(147, 143, 143, 0.18) 0px 2px 4px;
+  }

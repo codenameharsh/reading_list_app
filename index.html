@@ -13,7 +13,7 @@
     <header>
         <div class="hamburger-menu">
             <img src="assets/menu.svg" alt="menu-icon">
-            <h1 class="logo">BOOKTROVERT</h1>
+            <h1 class="logo">Book Tracker</h1>
             <img src="assets/account_circle.svg" alt="" class="profile-icon">
         </div>
     </header>
@@ -23,7 +23,7 @@
             <input type="text" placeholder="Book Title" id="book-title" name="title">
             <input type="text" placeholder="Author" id="author" name="author">
             <input type="text" placeholder="Genre" name="genre" id="genre">
-            <select id="status" name="status">
+            <select id="status" name="status" placeholder="Status">
                 <option value="Read">Read</option>
                 <option value="DNF">Did Not Finish</option>
                 <option value="Reading">Reading</option>
@@ -46,11 +46,28 @@
     </div>
 
     <main class="main" id="book-container">
+        <div class="book-tile">
+            <img src="assets/book.svg" alt="books">
+            <div class="des-books">
+                <p>Harry Potter(1-7)</p>
+                <p>J K Rowling</p>
+                <p>Fantasy</p>
+                <p>Read</p>
+            </div>
+            <div class="action-btns">
+                <div class="delete-btn">
+                    <img src="assets/delete.svg" alt="delete">
+                </div>
+                <div class="edit-btn">
+                    <img src="assets/edit.svg" alt="edit">
+                </div>
+            </div>
+        </div>
     </main>
 
 
     
 
-    <script src="script.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>
