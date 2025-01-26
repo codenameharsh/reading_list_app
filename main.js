@@ -1,6 +1,38 @@
     const addBookBtn =document.getElementById('add-book-btn');
     const addBookForm = document.getElementById('add-book');
-    const bookList = [];
+    
+    const bookList = [
+        {
+          "title": "Philosopher's Stone",
+          "author": "J.K. Rowling",
+          "genre": "Fantasy",
+          "status": 1997
+        },
+        {
+          "title": "Deathly Hallows",
+          "author": "J.K. Rowling",
+          "genre": "Fantasy",
+          "status": 2007
+        },
+        {
+          "title": "Half-Blood Prince",
+          "author": "J.K. Rowling",
+          "genre": "Fantasy",
+          "status": 2005
+        },
+        {
+          "title": "Order of the Phoenix",
+          "author": "J.K. Rowling",
+          "genre": "Fantasy",
+          "status": 2003
+        },
+        {
+          "title": "Goblet of Fire",
+          "author": "J.K. Rowling",
+          "genre": "Fantasy",
+          "status": 2000
+        }];
+
     const bookTilesContainer = document.getElementById("book-container")
     const bookCount = document.querySelector('.count');
 
@@ -10,6 +42,94 @@
         const bookCount = bookTiles.length;
         bookCountElement.textContent = bookCount;
     }
+
+    /*const book = {
+        title: 'fake',
+        author: 'freak',
+        genre: 'frankeinstein',
+        status: 'banned'
+    }*/
+
+   // bookList.push(book)
+
+    
+   // console.log(bookList);
+
+    bookList.forEach(b => {
+
+        const book = b
+
+        const currentCount = parseInt(bookCount.textContent);
+        bookCount.textContent = currentCount + 1;
+
+
+        const bookTile = document.createElement('div');
+        bookTile.classList.add('book-tile')
+
+        const bookDescription = document.createElement('div')
+        bookDescription.classList.add('des-books')
+
+        const imgBook = document.createElement('img');
+        imgBook.src = "assets/book.svg"
+        imgBook.alt= `${book.title} Cover`
+
+        const titleP = document.createElement('p');
+        titleP.classList.add('book-title'); // Add this line
+        titleP.textContent = book.title;
+        
+        const authorP = document.createElement('p');
+        authorP.classList.add('book-author'); // Add this line
+        authorP.textContent = book.author;
+        
+        const genreP = document.createElement('p');
+        genreP.classList.add('book-genre'); // Add this line
+        genreP.textContent = book.genre;
+        
+        const statusP = document.createElement('p');
+        statusP.classList.add('book-status'); // Add this line
+        statusP.textContent = book.status;
+
+    
+        
+        bookDescription.appendChild(titleP)
+        bookDescription.appendChild(authorP)
+        bookDescription.appendChild(genreP)
+        bookDescription.appendChild(statusP)
+
+        
+       
+        bookTile.appendChild(bookDescription)
+       
+
+        bookTilesContainer.appendChild(bookTile)
+        updateBookCount()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    });
+
+    
+
+
+
+
+
+
+
+
 
     document.addEventListener('DOMContentLoaded', updateBookCount);
 
@@ -35,6 +155,7 @@
         }
 
         bookList.push(book);
+        
         console.log(bookList)
 
         const currentCount = parseInt(bookCount.textContent);
