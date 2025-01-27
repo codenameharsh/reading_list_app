@@ -172,6 +172,7 @@ addBookBtn.addEventListener('click', (e) => {
         
             // Add the popup to the page
             document.body.appendChild(popup);
+            popup.scrollIntoView({behavior: "smooth"});
         
             // Add event listeners to the save and cancel buttons
             document.getElementById('save-edit-btn').addEventListener('click', (e) => {
